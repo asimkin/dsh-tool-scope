@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "title": {
+    "en": "asimkin dsh plugins",
+    "ru": "Плагины asimkin для dsh"
+  },
+  "description": {
+    "en": "Small, focused DeepSeek Harness plugins",
+    "ru": "Небольшие прицельные плагины для DeepSeek Harness"
+  },
+  "metadata": {
+    "categories": {
+      "agents": {
+        "title": {
+          "en": "Agents & subagents",
+          "ru": "Агенты и субагенты"
+        }
+      }
+    },
+    "sortKeys": {
+      "github_stars": {
+        "title": {
+          "en": "GitHub stars"
+        },
+        "order": "desc"
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-tool-scope",
+      "title": {
+        "en": "Tool scope for role subagents",
+        "ru": "Скоуп тулов для ролевых субагентов"
+      },
+      "description": {
+        "en": "Per-agent tool restriction: a role child stops inheriting the whole host tool layer (28k -> 0.6-2.4k tokens of schema).",
+        "ru": "Ограничение набора тулов по агенту: ролевой ребёнок перестаёт наследовать весь host-слой (28k -> 0.6-2.4k токенов схемы)."
+      },
+      "author": "Simkin Anatoly",
+      "homepage": "https://github.com/asimkin/dsh-tool-scope",
+      "repository": {
+        "url": "https://github.com/asimkin/dsh-tool-scope"
+      },
+      "metadata": {
+        "category": "agents",
+        "keywords": [
+          "subagent",
+          "agent-preset",
+          "tools",
+          "tokens"
+        ]
+      },
+      "dist-tags": {
+        "latest": "0.1.0"
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1794651166,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/asimkin/dsh-tool-scope",
+            "commit": "3d005390229c7ee1cd29c29220fe497190b63a74"
+          },
+          "engines": {
+            "dsh": ">=0.2.0 <0.3.0"
+          }
+        }
+      ]
+    }
+  ]
+}
