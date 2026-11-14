@@ -57,11 +57,11 @@
       "versions": [
         {
           "version": "0.1.0",
-          "publishTimestamp": 1794651166,
+          "publishTimestamp": 1794651636,
           "source": {
             "type": "git",
             "url": "https://github.com/asimkin/dsh-tool-scope",
-            "commit": "3d005390229c7ee1cd29c29220fe497190b63a74"
+            "commit": "eaf5a7627edb2ba67fba7fef86347c65430b46a1"
           },
           "engines": {
             "dsh": ">=0.2.0 <0.3.0"
