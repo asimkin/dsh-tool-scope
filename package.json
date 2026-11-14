@@ -1,0 +1,43 @@
+{
+  "name": "dsh-tool-scope",
+  "version": "0.1.0",
+  "description": "Per-agent tool restriction for dsh role subagents: narrows the tool schemas a child inherits from the host layer.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "Simkin Anatoly",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh-bundle",
+    "agent-preset",
+    "tools",
+    "subagent"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asimkin/dsh-tool-scope.git"
+  },
+  "homepage": "https://github.com/asimkin/dsh-tool-scope#readme",
+  "bugs": {
+    "url": "https://github.com/asimkin/dsh-tool-scope/issues"
+  }
+}

@@ -1,0 +1,11 @@
+# Bundle layer of dsh-tool-scope.
+#
+# The row is declared here so that installing the bundle is enough: a plugin
+# without a row does nothing. The default `roles` map is empty on purpose — the
+# deployment names its Agent Presets and the tools each of them keeps (see
+# README). A deployment may override this row by id in its own patch layer.
+- insert:
+    - id: tool-scope
+      name: 'dsh-tool-scope'
+      config:
+        roles: {}
