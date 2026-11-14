@@ -19,17 +19,13 @@ a `code_reviewer` child **28 101** — although the child only needs four tools.
 ## Install
 
 ```sh
-dsh plugin --profile web add dsh-tool-scope
+# from the published index (Discover tab) — one click, or:
+dsh plugin --profile web add git+https://github.com/asimkin/dsh-tool-scope.git#<commit>
 ```
 
 The package is a bundle: it inserts the `tool-scope` row automatically. It does nothing until you
-configure roles.
-
-Or from a Git checkout:
-
-```sh
-dsh plugin --profile web add git+https://github.com/<owner>/dsh-tool-scope.git#<commit>
-```
+configure roles. The market index is `https://asimkin.github.io/dsh-tool-scope/index.json` (add it in
+Plugins → Discover or as `plugin-market` `indexes`). An npm release is not published yet.
 
 ## Configure
 
