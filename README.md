@@ -104,6 +104,9 @@ The pattern is the same one the upstream `browser-use-runtime` uses for its MCP 
 - Reapplying after a preset changes requires a new child; existing children keep the filter they got.
 - The root agent cannot be scoped this way (dsh has no root-level switch), which is why only children
   are configured.
+- Tools registered in the agent's **own** scope — the delegation `report` tool, and MCP resource helpers
+  depending on registration order — stay visible by design: a scoped restriction exempts the scope's own
+  layer. In a measured run this added three small `mcp resources` tools with no measurable token change.
 
 ## Market index
 
