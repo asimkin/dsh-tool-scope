@@ -16,6 +16,28 @@ a `code_reviewer` child **28 101** — although the child only needs four tools.
 | `design-critic` | 28 101 | **1 422** | + `read_mcp_resource` and 4 Confluence tools |
 | `memory-scout` | 28 101 | **2 382** | + 7 `codebase-memory` tools |
 
+## What this plugin does not ship
+
+It ships **no Agent Presets and no skills** — only the restriction mechanism. The preset ids in the
+example table (`code-reviewer`, `plan-writer`, `design-critic`, `memory-scout`) belong to the
+deployment this plugin was written for; you map your own ids in `roles`.
+
+The workflow those roles implement — brainstorm → design review → plan → implementation → code review —
+comes from [obra/superpowers](https://github.com/obra/superpowers) (MIT): its skills
+(`brainstorming`, `writing-plans`, `executing-plans`, `requesting-code-review`, …) are what the role
+agents load. In this deployment they are attached to dsh with a `skill-filesystem` row:
+
+```yaml
+- id: skill-filesystem
+  name: '@deepseek-ai/dsh-skill-filesystem'
+  config:
+    customSkillDirs:
+      - /path/to/superpowers/skills
+```
+
+Then each role is an ordinary Agent Preset (persona + the tools it may use), and `dsh-tool-scope` is
+what actually removes the inherited tools from that child.
+
 ## Install
 
 ```sh
@@ -82,6 +104,23 @@ The pattern is the same one the upstream `browser-use-runtime` uses for its MCP 
 - Reapplying after a preset changes requires a new child; existing children keep the filter they got.
 - The root agent cannot be scoped this way (dsh has no root-level switch), which is why only children
   are configured.
+
+## Market index
+
+`docs/index.json` is the Discover catalog for this repository — a static file in
+[`dsh-plugin-market-index`](https://github.com/deepseek-ai/deepseek-harness) format v1, served by
+GitHub Pages at <https://asimkin.github.io/dsh-tool-scope/index.json>. dsh's Plugins → Discover tab
+(and the agent's `plugin_market` tool) read it; add that URL in Discover or as `plugin-market`
+`indexes` in the config.
+
+The index pins an exact source per version — a git commit here, so no npm release is required — and
+carries `engines.dsh` plus the display metadata. **Every release updates it by hand**: bump `version`,
+`source.commit`, `publishTimestamp` (the commit's committer time) and `dist-tags`, then push; Discover
+otherwise keeps installing the old commit. Validate before pushing:
+
+```sh
+node --input-type=module -e "import { parseMarketIndex } from '@deepseek-ai/dsh-plugin-market-index'; ..."
+```
 
 ## License
 
