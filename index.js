@@ -25,7 +25,7 @@
  * warning and a hard failure is logged and skipped.
  */
 
-export const name = 'paiw-tool-scope'
+export const name = 'dsh-tool-scope'
 
 export const inject = ['tools']
 

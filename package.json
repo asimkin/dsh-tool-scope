@@ -1,6 +1,6 @@
 {
   "name": "dsh-tool-scope",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Per-agent tool restriction for dsh role subagents: narrows the tool schemas a child inherits from the host layer.",
   "type": "module",
   "main": "index.js",
@@ -39,5 +39,8 @@
   "homepage": "https://github.com/asimkin/dsh-tool-scope#readme",
   "bugs": {
     "url": "https://github.com/asimkin/dsh-tool-scope/issues"
+  },
+  "scripts": {
+    "test": "node --test"
   }
 }
