@@ -52,9 +52,21 @@
         ]
       },
       "dist-tags": {
-        "latest": "0.1.0"
+        "latest": "0.1.1"
       },
       "versions": [
+        {
+          "version": "0.1.1",
+          "publishTimestamp": 1794777886,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/asimkin/dsh-tool-scope",
+            "commit": "c77e6f76499bbe0377da3cdf4078a6a6e6391c73"
+          },
+          "engines": {
+            "dsh": ">=0.2.0 <0.3.0"
+          }
+        },
         {
           "version": "0.1.0",
           "publishTimestamp": 1794736512,
